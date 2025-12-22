@@ -144,16 +144,64 @@ Cada proyecto contiene:
    - Instrucciones de descarga
    - Checklist de verificación
 
-3. **[../base.md](../base.md)**
+3. **[RESUMEN_DESCARGAS.md](./RESUMEN_DESCARGAS.md)** ⭐ NUEVO
+   - Resumen completo de todos los datasets
+   - Organizados por nivel
+   - Instrucciones de descarga
+   - Solución de problemas
+
+4. **[INICIO_RAPIDO.md](./INICIO_RAPIDO.md)** ⭐ NUEVO
+   - Guía rápida de 4 pasos
+   - Instrucciones de configuración
+   - Comandos esenciales
+
+5. **[CONFIGURAR_KAGGLE.md](./CONFIGURAR_KAGGLE.md)** ⭐ NUEVO
+   - Guía completa para configurar Kaggle API en Windows
+   - Solución paso a paso del error "kaggle.json not found"
+   - Comandos de PowerShell listos para usar
+
+6. **[SOLUCION_ERROR_KAGGLE.md](./SOLUCION_ERROR_KAGGLE.md)** ⭐ NUEVO
+   - Análisis del error común
+   - Soluciones rápidas
+   - Checklist de verificación
+
+5. **[../base.md](../base.md)**
    - Guía completa de tecnologías
    - Instalación y configuración
    - Conceptos fundamentales
    - Comandos útiles
 
-### 🛠️ Scripts Útiles
+### 🛠️ Scripts de Descarga
 
+#### Script de Verificación (Ejecutar Primero) ⭐ NUEVO
+- **[scripts/verificar_configuracion.py](./scripts/verificar_configuracion.py)**
+  - Verifica que todo esté configurado correctamente
+  - Detecta problemas de configuración
+  - Te dice exactamente qué falta
+  - **Ejecuta esto ANTES de descargar**
+
+#### Script Maestro (Recomendado)
+- **[scripts/descargar_todos_datasets.py](./scripts/descargar_todos_datasets.py)** ⭐
+  - Descarga TODOS los datasets de todos los niveles
+  - 12 datasets en total (~30 GB)
+  - Proceso automatizado completo
+
+#### Scripts por Nivel
+- **[scripts/descargar_basico.py](./scripts/descargar_basico.py)**
+  - Descarga 3 datasets del nivel básico (~250 MB)
+  
+- **[scripts/descargar_intermedio.py](./scripts/descargar_intermedio.py)**
+  - Descarga 3 datasets del nivel intermedio (~800 MB)
+  
+- **[scripts/descargar_avanzado.py](./scripts/descargar_avanzado.py)**
+  - Descarga 3 datasets del nivel avanzado (~5 GB)
+  
+- **[scripts/descargar_extremo.py](./scripts/descargar_extremo.py)**
+  - Descarga 3 datasets del nivel EXTREMO (~20 GB)
+
+#### Scripts Auxiliares
 - **[scripts/descargar_datos_kaggle.py](./scripts/descargar_datos_kaggle.py)**
-  - Script para descargar datasets de Kaggle
+  - Script genérico para descargar datasets de Kaggle
   - Lista de datasets recomendados
   - Instrucciones de uso
 
@@ -161,11 +209,21 @@ Cada proyecto contiene:
 
 ### Para empezar un nuevo proyecto:
 
-1. **Elegir dataset**: Revisa [DATASETS_RECOMENDADOS.md](./DATASETS_RECOMENDADOS.md)
-2. **Descargar datos**: Usa `scripts/descargar_datos_kaggle.py`
+1. **Descargar TODOS los datasets** (Recomendado):
+   ```bash
+   python Portfolio/scripts/descargar_todos_datasets.py
+   ```
+   O revisa [INICIO_RAPIDO.md](./INICIO_RAPIDO.md) para guía rápida
+
+2. **Elegir dataset**: Revisa [DATASETS_RECOMENDADOS.md](./DATASETS_RECOMENDADOS.md) o [RESUMEN_DESCARGAS.md](./RESUMEN_DESCARGAS.md)
+
 3. **Configurar PostgreSQL**: Sigue la guía en [base.md](../base.md)
-4. **Crear proyecto**: Usa la estructura estándar del portfolio
-5. **Documentar**: Incluye README, comentarios y notebooks explicativos
+
+4. **Cargar datos**: Usa los scripts de ejemplo en [FUENTES_DATOS_Y_PROYECTOS.md](./FUENTES_DATOS_Y_PROYECTOS.md)
+
+5. **Crear proyecto**: Usa la estructura estándar del portfolio
+
+6. **Documentar**: Incluye README, comentarios y notebooks explicativos
 
 ### Estructura recomendada para nuevo proyecto:
 
