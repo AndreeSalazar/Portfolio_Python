@@ -128,9 +128,99 @@ Cada proyecto contiene:
 - Código comentado y documentado
 - Resultados reproducibles
 
+## 📖 Guías y Documentación
+
+### 🎯 Guías Esenciales
+
+1. **[FUENTES_DATOS_Y_PROYECTOS.md](./FUENTES_DATOS_Y_PROYECTOS.md)** ⭐
+   - Fuentes de datos reales y gratuitas
+   - Proyectos detallados paso a paso
+   - Ejemplos completos de código
+   - Integración del stack completo
+
+2. **[DATASETS_RECOMENDADOS.md](./DATASETS_RECOMENDADOS.md)**
+   - Top 10 datasets recomendados
+   - Selección por nivel de complejidad
+   - Instrucciones de descarga
+   - Checklist de verificación
+
+3. **[../base.md](../base.md)**
+   - Guía completa de tecnologías
+   - Instalación y configuración
+   - Conceptos fundamentales
+   - Comandos útiles
+
+### 🛠️ Scripts Útiles
+
+- **[scripts/descargar_datos_kaggle.py](./scripts/descargar_datos_kaggle.py)**
+  - Script para descargar datasets de Kaggle
+  - Lista de datasets recomendados
+  - Instrucciones de uso
+
+## 🚀 Inicio Rápido
+
+### Para empezar un nuevo proyecto:
+
+1. **Elegir dataset**: Revisa [DATASETS_RECOMENDADOS.md](./DATASETS_RECOMENDADOS.md)
+2. **Descargar datos**: Usa `scripts/descargar_datos_kaggle.py`
+3. **Configurar PostgreSQL**: Sigue la guía en [base.md](../base.md)
+4. **Crear proyecto**: Usa la estructura estándar del portfolio
+5. **Documentar**: Incluye README, comentarios y notebooks explicativos
+
+### Estructura recomendada para nuevo proyecto:
+
+```
+nivel_proyecto/
+├── README.md              # Descripción completa del proyecto
+├── data/                  # Datos (en .gitignore)
+│   └── README.md          # Descripción de los datos
+├── sql/                   # Scripts SQL
+│   ├── schema.sql         # Estructura de base de datos
+│   └── consultas.sql       # Consultas de análisis
+├── notebooks/             # Análisis en Jupyter
+│   └── analisis.ipynb     # Notebook principal
+├── scripts/                # Scripts Python
+│   ├── etl.py             # Pipeline ETL
+│   └── exportar.py         # Exportación de resultados
+├── excel/                  # Reportes Excel
+│   └── dashboard.xlsx     # Dashboard ejecutivo
+└── figures/                # Visualizaciones
+    └── graficos.png       # Gráficos generados
+```
+
+## 💡 Recomendaciones
+
+### Para demostrar el stack completo:
+
+1. **PostgreSQL** ⭐: 
+   - Crea base de datos estructurada
+   - Usa JOINs, Window Functions, CTEs
+   - Optimiza con índices
+
+2. **Python (pandas, numpy)**:
+   - Carga datos desde PostgreSQL
+   - Limpieza y transformación
+   - Análisis estadístico
+   - Visualizaciones
+
+3. **Jupyter**:
+   - Documenta todo el proceso
+   - Incluye explicaciones en Markdown
+   - Crea dashboards interactivos
+
+4. **Excel / Sheets**:
+   - Exporta resultados desde Python
+   - Crea tablas dinámicas
+   - Diseña dashboards profesionales
+
+5. **Git**:
+   - Commits descriptivos
+   - README profesional
+   - Organización clara
+
 ---
 
 **Última actualización**: Diciembre 2024
 
-**Nota**: Este portfolio demuestra progresión de habilidades desde lo básico hasta nivel experto.
+**Nota**: Este portfolio demuestra progresión de habilidades desde lo básico hasta nivel experto. Revisa las guías adicionales para proyectos detallados con datos reales.
 
