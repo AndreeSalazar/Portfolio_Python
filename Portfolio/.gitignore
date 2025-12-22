@@ -1,0 +1,59 @@
+# Datos
+*.csv
+*.xlsx
+*.xls
+*.json
+!sample_data/*.csv
+!sample_data/*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints
+
+# Configuración con credenciales
+config.ini
+.env
+secrets.json
+*.key
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Resultados grandes
+*.pkl
+*.h5
+*.hdf5
+
+# Logs
+*.log
+
+# Temporales
+*.tmp
+*.temp
+~$*
+
+# PostgreSQL
+*.dump
+*.backup
+
+# Modelos ML grandes (opcional)
+models/*.pkl
+!models/.gitkeep
+
