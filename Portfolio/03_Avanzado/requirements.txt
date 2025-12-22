@@ -1,0 +1,25 @@
+# Dependencias para el proyecto básico
+# Portfolio Data Analyst - Nivel Básico
+
+# Análisis de datos
+pandas>=1.5.0
+numpy>=1.23.0
+
+# Visualizaciones
+matplotlib>=3.6.0
+seaborn>=0.12.0
+
+# Base de datos
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.0
+
+# Excel
+openpyxl>=3.0.0
+
+# Jupyter
+jupyter>=1.0.0
+ipykernel>=6.0.0
+
+# Advertencias
+warnings
+
