@@ -1,101 +1,71 @@
-# 📘 Portfolio - Nivel Básico
+# 📘 Portfolio - Level 1: Basic (Foundations)
 
-Proyectos básicos que demuestran comprensión de los conceptos fundamentales del stack de Data Analyst.
+This level demonstrates a solid understanding of the fundamental concepts of the Data Analyst stack. It focuses on the ability to retrieve, clean, and visualize data effectively.
 
-## 🎯 Objetivos
+## 🎯 Objectives & Role
 
-- Demostrar conocimiento de SQL básico
-- Mostrar uso básico de pandas y numpy
-- Crear visualizaciones simples
-- Documentar el proceso de análisis
+**Role**: Junior Data Analyst / Entry-Level Analyst
 
-## 📁 Proyectos Incluidos
+*   **Querying Data**: Retrieving information using basic SQL.
+*   **Data Cleaning**: Handling missing values and ensuring data quality with Python (Pandas).
+*   **Basic Visualization**: Creating simple charts to communicate findings.
+*   **Documentation**: Clearly explaining the analysis process.
 
-### 1. Análisis de Ventas Básico
-**Descripción**: Análisis simple de ventas con SQL y visualización básica
+## 📁 Included Projects
 
-**Tecnologías**:
-- PostgreSQL: Consultas SELECT, WHERE, GROUP BY
-- Python: pandas básico
-- Jupyter: Análisis exploratorio simple
+### 1. Basic Sales Analysis
+**Description**: A straightforward analysis of sales data using SQL for retrieval and Python for visualization.
 
-**Archivos**:
-- `sql/consultas_ventas.sql`
-- `notebooks/analisis_ventas.ipynb`
-- `figures/ventas_grafico.png`
+**Business Context**:
+*   A retail manager needs to know total sales and sales by category.
+*   **Value**: Provides quick visibility into the basic performance of the business.
 
-**Habilidades demostradas**:
-- Consultas SQL básicas
-- Lectura de datos con pandas
-- Gráficos simples con matplotlib
+**Tech Stack**:
+*   **PostgreSQL**: `SELECT`, `WHERE`, `GROUP BY`
+*   **Python**: `pandas` for dataframes
+*   **Jupyter**: Exploratory Data Analysis (EDA)
 
----
-
-### 2. Limpieza de Datos Simple
-**Descripción**: Proceso de limpieza de un dataset con valores faltantes
-
-**Tecnologías**:
-- Python: pandas (dropna, fillna)
-- Jupyter: Documentación del proceso
-
-**Archivos**:
-- `scripts/limpieza_datos.py`
-- `notebooks/limpieza_proceso.ipynb`
-
-**Habilidades demostradas**:
-- Identificación de datos faltantes
-- Estrategias de limpieza
-- Validación de datos
+**Files**:
+*   `sql/consultas_ventas.sql`
+*   `notebooks/analisis_ventas.ipynb`
+*   `figures/ventas_grafico.png`
 
 ---
 
-### 3. Estadísticas Descriptivas
-**Descripción**: Cálculo y visualización de estadísticas básicas
+### 2. Data Cleaning & Preparation
+**Description**: A process to clean a raw dataset containing errors and missing values.
 
-**Tecnologías**:
-- Python: pandas, numpy
-- Jupyter: Presentación de resultados
+**Business Context**:
+*   Raw data from Excel/CSV is often messy. Decisions cannot be made on bad data.
+*   **Value**: Ensures data integrity before any analysis begins.
 
-**Archivos**:
-- `scripts/estadisticas.py`
-- `notebooks/estadisticas_descriptivas.ipynb`
+**Tech Stack**:
+*   **Python**: `pandas` (`dropna`, `fillna`, type conversion)
+*   **Jupyter**: Documentation of cleaning decisions.
 
-**Habilidades demostradas**:
-- Cálculo de media, mediana, desviación estándar
-- Visualización de distribuciones
-- Interpretación de resultados
-
-## 🚀 Cómo Ejecutar
-
-### Requisitos
-```bash
-pip install pandas numpy jupyter matplotlib seaborn psycopg2-binary sqlalchemy
-```
-
-### Ejecutar Proyectos
-1. Configurar PostgreSQL con datos de ejemplo
-2. Ejecutar scripts SQL
-3. Abrir notebooks en Jupyter
-4. Revisar resultados en `figures/`
-
-## ✅ Checklist de Habilidades Básicas
-
-- [x] Consultas SQL básicas (SELECT, WHERE, ORDER BY)
-- [x] Lectura y escritura de datos con pandas
-- [x] Operaciones básicas con numpy
-- [x] Visualizaciones simples (gráficos de barras, líneas)
-- [x] Limpieza básica de datos
-- [x] Documentación clara en Jupyter
-
-## 📊 Resultados Esperados
-
-Cada proyecto debe incluir:
-- ✅ Código funcional y comentado
-- ✅ Visualizaciones claras
-- ✅ Explicación del proceso
-- ✅ Conclusiones básicas
+**Files**:
+*   `scripts/limpieza_datos.py`
+*   `notebooks/limpieza_proceso.ipynb`
 
 ---
 
-**Nivel**: Básico - Fundamentos del Data Analyst
+### 3. Descriptive Statistics
+**Description**: Calculation and visualization of basic statistical metrics.
 
+**Business Context**:
+*   Understanding the "shape" of the data (average order value, distribution of sales).
+*   **Value**: Helps identify normal behavior versus outliers.
+
+**Tech Stack**:
+*   **Python**: `numpy`, `pandas`
+*   **Jupyter**: Presentation
+
+**Files**:
+*   `scripts/estadisticas.py`
+*   `notebooks/estadisticas_descriptivas.ipynb`
+
+## 📊 Key Skills Demonstrated
+*   ✅ Writing clear, efficient SQL queries.
+*   ✅ Manipulating dataframes with Pandas.
+*   ✅ Creating standard business charts (Bar, Line).
+*   ✅ Documenting the "Why" and "How" of analysis.

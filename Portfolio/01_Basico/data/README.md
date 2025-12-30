@@ -1,127 +1,100 @@
-# 📊 Datasets - Nivel Básico
+# 📊 Datasets - Basic Level
 
-Esta carpeta contiene los datasets descargados para proyectos de nivel básico.
+This folder contains datasets used for basic level projects.
 
-## 📦 Datasets Incluidos
+## 📦 Included Datasets
 
 ### 1. Retail Sales Dataset
-**Fuente**: Kaggle  
+**Source**: Kaggle  
 **ID**: `rohitsahoo/sales-forecasting`  
-**Carpeta**: `retail_sales/`
+**Folder**: `retail_sales/`
 
-**Descripción**:
-- Datos de ventas retail reales
-- Múltiples dimensiones (tiempo, producto, región, cliente)
-- Tamaño: ~50K-100K registros
-- Perfecto para análisis básico e intermedio
+**Description**:
+- Real retail sales data.
+- Multiple dimensions (time, product, region, customer).
+- Size: ~50K-100K records.
+- Perfect for basic and intermediate analysis.
 
-**Estructura esperada**:
-- `ventas.csv`: fecha, producto_id, cantidad, total, región
-- `productos.csv`: producto_id, nombre, categoría, precio
-- `clientes.csv`: cliente_id, nombre, ciudad, segmento
+**Expected Structure**:
+- `ventas.csv`: date, product_id, quantity, total, region
+- `productos.csv`: product_id, name, category, price
+- `clientes.csv`: customer_id, name, city, segment
 
-**Uso en proyectos**:
-- Análisis de ventas por región/mes
-- Performance de productos
-- Análisis de tendencias temporales
-- Segmentación de clientes
+**Use in Projects**:
+- Sales analysis by region/month.
+- Product performance.
+- Seasonal trend analysis.
+- Customer segmentation.
 
 ---
 
 ### 2. Superstore Sales Dataset
-**Fuente**: Kaggle  
+**Source**: Kaggle  
 **ID**: `vivek468/superstore-dataset-final`  
-**Carpeta**: `superstore/`
+**Folder**: `superstore/`
 
-**Descripción**:
-- Dataset muy popular de supermercado/retail
-- Múltiples dimensiones
-- Perfecto para dashboards
+**Description**:
+- Very popular supermarket/retail dataset.
+- Multiple dimensions.
+- Perfect for dashboards.
 
-**Estructura esperada**:
-- `Superstore.xlsx` o `Superstore.csv`
-- Columnas: Order ID, Order Date, Ship Date, Customer Name, Segment, Country, City, State, Region, Product ID, Category, Sub-Category, Product Name, Sales, Quantity, Discount, Profit
+**Expected Structure**:
+- `Superstore.xlsx` or `Superstore.csv`
+- Columns: Order ID, Order Date, Ship Date, Customer Name, Segment, Country, City, State, Region, Product ID, Category, Sub-Category, Product Name, Sales, Quantity, Discount, Profit
 
-**Uso en proyectos**:
-- Dashboard completo de ventas
-- Análisis de profitabilidad
-- Segmentación de productos
-- Análisis de tendencias
+**Use in Projects**:
+- Full sales dashboard.
+- Profitability analysis.
+- Product segmentation.
+- Trend analysis.
 
 ---
 
 ### 3. HR Analytics Dataset
-**Fuente**: Kaggle  
+**Source**: Kaggle  
 **ID**: `arindam235/startup-investments-crunchbase`  
-**Carpeta**: `hr_analytics/`
+**Folder**: `hr_analytics/`
 
-**Descripción**:
-- Datos de recursos humanos
-- Análisis de empleados y performance
-- Tamaño: ~15K registros
-- Perfecto para análisis de negocio
+**Description**:
+- Human Resources data.
+- Employee analysis and performance.
+- Size: ~15K records.
+- Perfect for business analysis.
 
-**Estructura esperada**:
-- Archivos CSV con información de empleados
-- Columnas: Employee ID, Department, Position, Salary, Performance, etc.
+**Expected Structure**:
+- CSV files with employee information.
+- Columns: Employee ID, Department, Position, Salary, Performance, etc.
 
-**Uso en proyectos**:
-- Análisis de rotación de empleados
-- Performance por departamento
-- Análisis de satisfacción
-- Predicción de renuncias
+**Use in Projects**:
+- Employee turnover analysis.
+- Performance by department.
+- Satisfaction analysis.
+- Resignation prediction.
 
 ---
 
-## 🚀 Cómo Usar Estos Datasets
+## 🚀 How to Use These Datasets
 
-### Paso 1: Verificar Descarga
+### Step 1: Verify Download
 ```bash
-# Verificar que los datasets estén descargados
+# Verify that datasets are downloaded
 ls -la Portfolio/01_Basico/data/
 ```
 
-### Paso 2: Explorar Datos
+### Step 2: Explore Data
 ```python
 import pandas as pd
 
-# Cargar dataset
-df = pd.read_csv('data/retail_sales/archivo.csv')
+# Load dataset
+df = pd.read_csv('data/retail_sales/file.csv')
 print(df.head())
 print(df.info())
 ```
 
-### Paso 3: Cargar a PostgreSQL
+### Step 3: Load to PostgreSQL
 ```python
 from sqlalchemy import create_engine
 
 engine = create_engine('postgresql://postgres:password@localhost:5432/retail_analysis')
 df.to_sql('ventas', engine, if_exists='replace', index=False)
 ```
-
-### Paso 4: Análisis en Jupyter
-- Crear notebook en `notebooks/analisis_ventas.ipynb`
-- Documentar todo el proceso
-- Crear visualizaciones
-
----
-
-## 📝 Notas Importantes
-
-- ⚠️ Los archivos grandes pueden estar en `.gitignore`
-- ✅ Siempre documenta la fuente de los datos
-- ✅ Incluye fecha de descarga en tu análisis
-- ✅ Verifica la calidad de los datos antes de usar
-
----
-
-## 🔗 Enlaces Útiles
-
-- **Kaggle**: https://www.kaggle.com/datasets
-- **Documentación del Portfolio**: ../FUENTES_DATOS_Y_PROYECTOS.md
-- **Guía de Datasets**: ../DATASETS_RECOMENDADOS.md
-
----
-
-**Última actualización**: Diciembre 2024
-
