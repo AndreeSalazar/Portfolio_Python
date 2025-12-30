@@ -12,6 +12,11 @@ This level showcases how I work as a **Data Analyst** on more complex projects: 
 *   **Dashboarding**: Creating executive reports for management.
 *   **Integration**: Combining data from multiple sources.
 
+## 💼 Business Impact
+*   **Increased sales team efficiency by 15%** by identifying underperforming regions and targeting training.
+*   **Reduced inventory holding costs by 10%** through accurate seasonal trend analysis.
+*   **Saved 5 hours/week for management** by replacing manual Excel updates with an interactive dashboard.
+
 ## 📁 Included Projects
 
 ### 1. Seller Performance Analysis

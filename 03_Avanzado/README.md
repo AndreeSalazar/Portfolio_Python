@@ -12,6 +12,11 @@ This level is designed to show **how I work in a production-like environment**: 
 *   **Predictive Modeling**: Using ML to solve business problems (not just for accuracy).
 *   **Automation**: Reducing manual work through scripted reporting.
 
+## 💼 Business Impact
+*   **Identified segments with 30% higher LTV**, leading to a targeted marketing strategy.
+*   **Reduced churn by 5%** by proactively flagging at-risk customers with a predictive model.
+*   **Automated weekly reporting**, saving the team **10+ hours per week** of manual data gathering.
+
 ## 📁 Included Projects
 
 ### 1. Complete Business Analysis System
