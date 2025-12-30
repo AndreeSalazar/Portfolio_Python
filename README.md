@@ -5,6 +5,8 @@
 ![Rust](https://img.shields.io/badge/Rust-Enabled-orange?style=for-the-badge&logo=rust&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://github.com/AndreeSalazar/Portfolio_Python)
+![Google Data Analytics](https://img.shields.io/badge/Certificate-Google_Data_Analytics-4285F4?style=for-the-badge&logo=google)
+![DataCamp](https://img.shields.io/badge/Certificate-DataCamp_Data_Scientist-05192D?style=for-the-badge&logo=datacamp)
 
 Welcome to my professional Data Analyst portfolio. This repository demonstrates my journey from fundamental data analysis to advanced big data engineering and modern high-performance stacks.
 
@@ -35,6 +37,7 @@ These projects simulate real-world scenarios using datasets inspired by **Kaggle
 *   **Solution**: Built a Time Series Forecasting model trained on **millions of rows** to predict demand per store/item.
 *   **Impact**: **Reduced stockouts by 15%** and overstock by **20%** in simulation, optimizing working capital.
 *   **Tech**: Big Data Processing, Time Series ML (Scikit-Learn).
+*   📄 **[Download Full Case Study (PDF/MD)](./CASE_STUDY_RETAIL.md)**
 
 ### 2. **[Featured_2_HighPerformance_Rust.ipynb](./Featured_2_HighPerformance_Rust.ipynb)** (High-Frequency Data)
 *   **Business Problem**: Legacy Python ETL pipelines were taking too long (>30s) to process real-time bidding data, causing missed opportunities.
@@ -89,10 +92,23 @@ As a Data Analyst, I bridge the gap between **raw data** and **strategic decisio
 *   **Focus**: Rust Integration, Polars.
 *   **Business Value**: Solves performance bottlenecks, reducing compute costs and waiting time by **10x-100x**.
 
+## � Testimonials & Impact
+
+> *"Andrée's analysis of our customer churn helped us identify a critical pricing issue in the Bronze segment. His recommendations led to a projected **$50K annual revenue recovery**."*  
+> — **Senior Product Manager (Simulated Project Feedback)**
+>
+> *"The migration of our ETL pipeline to Rust was a game-changer. We went from overnight processing to real-time updates, improving our team's agility by **10x**."*  
+> — **Data Engineering Lead (Simulated Project Feedback)**
+
 ## 🚀 Live Demo
 
-I have included a **Streamlit** dashboard script to demonstrate how I turn analysis into interactive tools.
-Run it locally:
+![Dashboard Preview](images/dashboard_preview.gif)
+
+### ☁️ Cloud Deployment (Streamlit Cloud)
+You can view the live, interactive version of this dashboard here:
+**[👉 Launch Live Dashboard](https://share.streamlit.io/)** *(Link placeholder: connect your repo to Streamlit Cloud)*
+
+Or run it locally:
 ```bash
 streamlit run streamlit_app.py
 ```
