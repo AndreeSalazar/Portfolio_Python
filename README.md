@@ -108,10 +108,11 @@ As a Data Analyst, I bridge the gap between **raw data** and **strategic decisio
 You can view the live, interactive version of this dashboard here:
 **[👉 Launch Live Dashboard](https://share.streamlit.io/)** *(Link placeholder: connect your repo to Streamlit Cloud)*
 
-Or run it locally:
+Or run it locally to see the **Real-Time Simulation Mode**:
 ```bash
 streamlit run streamlit_app.py
 ```
+*(Check the "Start Live Simulation" box in the sidebar/main page)*
 
 ## 📬 Contact
 

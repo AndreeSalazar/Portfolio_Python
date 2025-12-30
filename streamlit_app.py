@@ -39,35 +39,76 @@ elif section == "Sales Analysis Demo":
     st.title("📊 Sales Trend Analysis")
     st.markdown("This is a **simulated live view** of a sales dataset, similar to the one used in Level 1 & 2 projects.")
 
-    # Generate synthetic data for demo
-    dates = pd.date_range(start="2023-01-01", periods=100)
-    data = pd.DataFrame({
-        "Date": dates,
-        "Sales": np.random.randint(100, 500, size=100),
-        "Region": np.random.choice(["North", "South", "East", "West"], size=100),
-        "Category": np.random.choice(["Electronics", "Clothing", "Home", "Toys"], size=100)
-    })
+    # Simulation Mode
+    run_simulation = st.checkbox("🟢 Start Live Simulation (Updates every 1s)")
 
-    # Metrics
-    total_sales = data["Sales"].sum()
-    avg_sales = data["Sales"].mean()
-    
-    m1, m2 = st.columns(2)
-    m1.metric("Total Sales (Simulated)", f"${total_sales:,.0f}")
-    m2.metric("Average Daily Sales", f"${avg_sales:.2f}")
+    if run_simulation:
+        import time
+        placeholder = st.empty()
+        
+        for seconds in range(200):
+            # Generate synthetic data for demo
+            dates = pd.date_range(start="2023-01-01", periods=100)
+            data = pd.DataFrame({
+                "Date": dates,
+                "Sales": np.random.randint(100, 500, size=100) + np.sin(np.linspace(0, 10, 100) + seconds/5) * 100,
+                "Region": np.random.choice(["North", "South", "East", "West"], size=100),
+                "Category": np.random.choice(["Electronics", "Clothing", "Home", "Toys"], size=100)
+            })
 
-    # Charts
-    c1, c2 = st.columns(2)
-    
-    with c1:
-        st.subheader("Sales Over Time")
-        st.line_chart(data.set_index("Date")["Sales"])
+            # Metrics
+            total_sales = data["Sales"].sum()
+            avg_sales = data["Sales"].mean()
 
-    with c2:
-        st.subheader("Sales by Region")
-        fig, ax = plt.subplots()
-        sns.barplot(data=data, x="Region", y="Sales", estimator=sum, ax=ax, palette="viridis")
-        st.pyplot(fig)
+            with placeholder.container():
+                m1, m2 = st.columns(2)
+                m1.metric("Total Sales (Simulated)", f"${total_sales:,.0f}", delta=f"{np.random.randint(-500, 500)}")
+                m2.metric("Average Daily Sales", f"${avg_sales:.2f}", delta=f"{np.random.random()-0.5:.2f}")
+
+                # Charts
+                c1, c2 = st.columns(2)
+                
+                with c1:
+                    st.subheader("Sales Over Time")
+                    st.line_chart(data.set_index("Date")["Sales"])
+
+                with c2:
+                    st.subheader("Sales by Region")
+                    fig, ax = plt.subplots()
+                    sns.barplot(data=data, x="Region", y="Sales", estimator=sum, ax=ax, palette="viridis")
+                    st.pyplot(fig)
+            
+            time.sleep(1)
+    else:
+        # Static View (default)
+        dates = pd.date_range(start="2023-01-01", periods=100)
+        data = pd.DataFrame({
+            "Date": dates,
+            "Sales": np.random.randint(100, 500, size=100),
+            "Region": np.random.choice(["North", "South", "East", "West"], size=100),
+            "Category": np.random.choice(["Electronics", "Clothing", "Home", "Toys"], size=100)
+        })
+        
+        # Metrics
+        total_sales = data["Sales"].sum()
+        avg_sales = data["Sales"].mean()
+        
+        m1, m2 = st.columns(2)
+        m1.metric("Total Sales (Simulated)", f"${total_sales:,.0f}")
+        m2.metric("Average Daily Sales", f"${avg_sales:.2f}")
+
+        # Charts
+        c1, c2 = st.columns(2)
+        
+        with c1:
+            st.subheader("Sales Over Time")
+            st.line_chart(data.set_index("Date")["Sales"])
+
+        with c2:
+            st.subheader("Sales by Region")
+            fig, ax = plt.subplots()
+            sns.barplot(data=data, x="Region", y="Sales", estimator=sum, ax=ax, palette="viridis")
+            st.pyplot(fig)
 
     st.subheader("Raw Data Preview")
     st.dataframe(data.head())
