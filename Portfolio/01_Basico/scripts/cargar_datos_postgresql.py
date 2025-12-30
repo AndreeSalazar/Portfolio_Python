@@ -40,14 +40,14 @@ def cargar_datos():
         df_productos = pd.read_csv(base_path / 'productos.csv')
         # Ajustar nombres de columnas
         df_productos.columns = ['producto_id', 'nombre', 'categoria', 'precio']
-        df_productos.to_sql('productos', engine, if_exists='replace', index=False)
+        df_productos.to_sql('productos', engine, if_exists='replace', index=False, method='multi', chunksize=2000)
         print(f"   [OK] {len(df_productos)} productos cargados")
         print(f"   Columnas: {list(df_productos.columns)}")
         
         # 2. Cargar clientes
         print("\n[2] Cargando clientes...")
         df_clientes = pd.read_csv(base_path / 'clientes.csv')
-        df_clientes.to_sql('clientes', engine, if_exists='replace', index=False)
+        df_clientes.to_sql('clientes', engine, if_exists='replace', index=False, method='multi', chunksize=2000)
         print(f"   [OK] {len(df_clientes)} clientes cargados")
         print(f"   Columnas: {list(df_clientes.columns)}")
         
@@ -56,7 +56,7 @@ def cargar_datos():
         df_ventas = pd.read_csv(base_path / 'ventas.csv')
         # Convertir fecha a formato datetime
         df_ventas['fecha'] = pd.to_datetime(df_ventas['fecha'])
-        df_ventas.to_sql('ventas', engine, if_exists='replace', index=False)
+        df_ventas.to_sql('ventas', engine, if_exists='replace', index=False, method='multi', chunksize=2000)
         print(f"   [OK] {len(df_ventas)} ventas cargadas")
         print(f"   Columnas: {list(df_ventas.columns)}")
         print(f"   Rango de fechas: {df_ventas['fecha'].min()} a {df_ventas['fecha'].max()}")

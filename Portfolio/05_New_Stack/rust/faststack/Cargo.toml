@@ -1,0 +1,16 @@
+[package]
+name = "faststack"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "faststack"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.21", features = ["extension-module"] }
+rand = "0.8"
+rayon = { version = "1.8", optional = true }
+
+[features]
+parallel = ["rayon"]

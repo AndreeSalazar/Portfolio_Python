@@ -121,6 +121,8 @@ def generar_big_data_time_series():
     df_holidays.to_csv(base_path / 'holidays_events.csv', index=False)
     print(f"   [OK] {len(df_holidays)} eventos guardados")
     
+    holiday_dates_set = set(h['date'] for h in holidays_data)
+    
     # TRAIN DATA - MILLONES de registros
     print("\n[5] Generando TRAIN Dataset (BIG DATA)...")
     print("   [INFO] Generando 2+ millones de registros. Esto puede tardar 5-10 minutos...")
@@ -146,7 +148,8 @@ def generar_big_data_time_series():
                     base_sales *= 1.5
                 
                 # Factor festivo
-                es_festivo = fecha in [pd.to_datetime(h['date']) for h in holidays_data if h['date'] == fecha.strftime('%Y-%m-%d')]
+                fecha_str = fecha.strftime('%Y-%m-%d')
+                es_festivo = fecha_str in holiday_dates_set
                 if es_festivo:
                     base_sales *= 1.3
                 
@@ -156,11 +159,11 @@ def generar_big_data_time_series():
                 
                 if base_sales > 0:  # Solo guardar si hay ventas
                     train_data.append({
-                        'date': fecha.strftime('%Y-%m-%d'),
+                        'date': fecha_str,
                         'store_nbr': store_nbr,
                         'item_nbr': item_nbr,
                         'unit_sales': base_sales,
-                        'onpromotion': random.choice([True, False])
+                        'onpromotion': bool(np.random.randint(0, 2))
                     })
                 
                 # Guardar en chunks para no llenar memoria

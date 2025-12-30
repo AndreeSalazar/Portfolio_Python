@@ -12,6 +12,11 @@ import pandas as pd
 from sqlalchemy import create_engine, text
 from pathlib import Path
 import sys
+try:
+    import polars as pl
+    _HAS_PL = True
+except Exception:
+    _HAS_PL = False
 
 
 # ============================================================
@@ -47,12 +52,17 @@ def cargar_datos():
         print("\n[1] Cargando datos de E-COMMERCE desde:", ecommerce_path)
 
         # customers
-        df_customers = pd.read_csv(ecommerce_path / "customers.csv")
-        df_customers.to_sql("ecom_customers", engine, if_exists="replace", index=False)
+        def _read_csv(path):
+            if _HAS_PL:
+                return pl.read_csv(path).to_pandas()
+            return pd.read_csv(path)
+        
+        df_customers = _read_csv(ecommerce_path / "customers.csv")
+        df_customers.to_sql("ecom_customers", engine, if_exists="replace", index=False, method="multi", chunksize=5000)
         print(f"   [OK] ecom_customers -> {len(df_customers)} registros")
 
         # orders
-        df_orders = pd.read_csv(ecommerce_path / "orders.csv")
+        df_orders = _read_csv(ecommerce_path / "orders.csv")
         # Intentar convertir columnas de fecha si existen
         for col in df_orders.columns:
             if "date" in col.lower() or "fecha" in col.lower():
@@ -60,20 +70,20 @@ def cargar_datos():
                     df_orders[col] = pd.to_datetime(df_orders[col])
                 except Exception:
                     pass
-        df_orders.to_sql("ecom_orders", engine, if_exists="replace", index=False)
+        df_orders.to_sql("ecom_orders", engine, if_exists="replace", index=False, method="multi", chunksize=5000)
         print(f"   [OK] ecom_orders -> {len(df_orders)} registros")
 
         # order_items
-        df_order_items = pd.read_csv(ecommerce_path / "order_items.csv")
+        df_order_items = _read_csv(ecommerce_path / "order_items.csv")
         df_order_items.to_sql(
-            "ecom_order_items", engine, if_exists="replace", index=False
+            "ecom_order_items", engine, if_exists="replace", index=False, method="multi", chunksize=5000
         )
         print(f"   [OK] ecom_order_items -> {len(df_order_items)} registros")
 
         # products
-        df_products = pd.read_csv(ecommerce_path / "products.csv")
+        df_products = _read_csv(ecommerce_path / "products.csv")
         df_products.to_sql(
-            "ecom_products", engine, if_exists="replace", index=False
+            "ecom_products", engine, if_exists="replace", index=False, method="multi", chunksize=5000
         )
         print(f"   [OK] ecom_products -> {len(df_products)} registros")
 
@@ -83,9 +93,9 @@ def cargar_datos():
         marketing_path = base_path / "marketing"
         print("\n[2] Cargando datos de MARKETING desde:", marketing_path)
 
-        df_marketing = pd.read_csv(marketing_path / "marketing_analytics.csv")
+        df_marketing = _read_csv(marketing_path / "marketing_analytics.csv")
         df_marketing.to_sql(
-            "marketing_analytics", engine, if_exists="replace", index=False
+            "marketing_analytics", engine, if_exists="replace", index=False, method="multi", chunksize=5000
         )
         print(f"   [OK] marketing_analytics -> {len(df_marketing)} registros")
 
@@ -96,7 +106,7 @@ def cargar_datos():
         print("\n[3] Cargando datos de ONLINE RETAIL desde:", online_path)
 
         # El archivo original suele ser Excel, aquí trabajamos con CSV ya generado
-        df_online = pd.read_csv(online_path / "online_retail.csv")
+        df_online = _read_csv(online_path / "online_retail.csv")
         # Intentar convertir la columna de fecha si existe
         for col in df_online.columns:
             if "InvoiceDate".lower() in col.lower() or "date" in col.lower():
@@ -105,7 +115,7 @@ def cargar_datos():
                 except Exception:
                     pass
         df_online.to_sql(
-            "online_retail", engine, if_exists="replace", index=False
+            "online_retail", engine, if_exists="replace", index=False, method="multi", chunksize=5000
         )
         print(f"   [OK] online_retail -> {len(df_online)} registros")
 
