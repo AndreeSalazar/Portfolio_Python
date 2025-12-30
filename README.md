@@ -1,10 +1,16 @@
 # 🚀 Data Analyst Portfolio
 
-Welcome to my professional Data Analyst portfolio. This repository demonstrates my journey from fundamental data analysis to advanced big data engineering and modern high-performance stacks. 
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-Enabled-orange?style=for-the-badge&logo=rust&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://github.com/AndreeSalazar/Portfolio_Python)
+
+Welcome to my professional Data Analyst portfolio. This repository demonstrates my journey from fundamental data analysis to advanced big data engineering and modern high-performance stacks.
 
 It is structured to show not just *technical skills*, but the **business value** I can deliver.
 
-## � Featured Projects (Start Here)
+##  Featured Projects (Start Here)
 
 If you want to see my code immediately, check these notebooks in the root folder:
 
@@ -31,8 +37,8 @@ As a Data Analyst, I bridge the gap between **raw data** and **strategic decisio
 *   **Technically Versatile**: From Excel/SQL to Python/Rust.
 *   **Scalable**: Handling CSVs to Big Data partitions.
 
-![Sales Analysis Example](./01_Basico/figures/analisis_ventas_basico.png)
-*Example: Basic Sales Trends Visualization*
+![Dashboard Preview](images/dashboard_preview.png)
+*Figure 1: Sample Sales Trend Analysis Dashboard showing regional performance and monthly evolution.*
 
 ## 🛠️ Technical Stack
 
@@ -66,6 +72,14 @@ As a Data Analyst, I bridge the gap between **raw data** and **strategic decisio
 ### [05_New_Stack (Modern Performance)](./05_New_Stack/README.md)
 *   **Focus**: Rust Integration, Polars.
 *   **Business Value**: Solves performance bottlenecks, reducing compute costs and waiting time by **10x-100x**.
+
+## 🚀 Live Demo
+
+I have included a **Streamlit** dashboard script to demonstrate how I turn analysis into interactive tools.
+Run it locally:
+```bash
+streamlit run streamlit_app.py
+```
 
 ## 📬 Contact
 

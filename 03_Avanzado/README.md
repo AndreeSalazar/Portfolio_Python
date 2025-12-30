@@ -17,6 +17,25 @@ This level is designed to show **how I work in a production-like environment**: 
 *   **Reduced churn by 5%** by proactively flagging at-risk customers with a predictive model.
 *   **Automated weekly reporting**, saving the team **10+ hours per week** of manual data gathering.
 
+## 📂 Project Inventory & File Structure
+
+This folder mimics a production environment. Here is what you will find:
+
+### 📁 `notebooks/`
+*   **`analisis_avanzado_datos.ipynb`**: The core analysis notebook. It contains:
+    *   Customer Segmentation (RFM Analysis).
+    *   Cohort Analysis (Retention over time).
+    *   Profitability Analysis by Category.
+    *   **Interactive Visualizations** (Plotly/Seaborn).
+
+### 📁 `data/`
+*   **`ecommerce_data.csv`** (or generated): The raw transactional dataset.
+*   **`processed_metrics.parquet`**: Optimized storage for analytical outputs.
+
+### 📄 Root Files
+*   **`portfolio_avanzado.db`**: SQLite database demonstrating local database management for analysis.
+*   **`requirements.txt`**: Project dependencies for reproducibility.
+
 ## 📁 Included Projects
 
 ### 1. Complete Business Analysis System
@@ -32,13 +51,6 @@ This level is designed to show **how I work in a production-like environment**: 
 *   **Python**: Modular ETL architecture.
 *   **Jupyter**: Documented end-to-end analysis.
 
-**Files**:
-*   `sql/schema_profesional.sql`
-*   `scripts/etl_robusto.py`
-*   `notebooks/analisis_completo.ipynb`
-
----
-
 ### 2. Predictive Business Analytics
 **Description**: Building models that provide **actionable value** (e.g., forecasting, churn prediction).
 
@@ -50,22 +62,6 @@ This level is designed to show **how I work in a production-like environment**: 
 **Tech Stack**:
 *   **Python**: `scikit-learn`, `statsmodels`.
 *   **PostgreSQL**: Data preparation.
-
-**Files**:
-*   `notebooks/modelo_predictivo.ipynb`
-*   `scripts/entrenar_modelo.py`
-
----
-
-### 3. Automated Executive Dashboard
-**Description**: Automated reporting system.
-
-**Business Context**:
-*   Leadership needs fresh KPIs every morning without manual intervention.
-*   **Value**: Consistent, error-free, timely information.
-
-**Tech Stack**:
-*   **Python/SQL**: Automated data refreshment.
 
 ## 📊 Key Skills Demonstrated
 *   ✅ Designing analytical models for large datasets.

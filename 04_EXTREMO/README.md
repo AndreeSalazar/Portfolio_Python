@@ -16,6 +16,25 @@ This level demonstrates my capability to handle **Big Data** and highly complex 
 *   **Optimized query performance by 100x** (from minutes to seconds) using partitioning and materialized views.
 *   **Processed 50M+ records on a standard machine** by implementing memory-efficient chunking strategies.
 
+## 📂 Project Inventory & File Structure
+
+This folder contains high-performance engineering scripts.
+
+### 📁 `notebooks/`
+*   **`pipeline_ml_extremo.ipynb`**: Complete Machine Learning pipeline for Big Data.
+    *   Demonstrates **out-of-core learning** (learning from data larger than RAM).
+    *   Time Series cross-validation.
+
+### 📁 `scripts/`
+*   **`generar_datos_extremo.py`**: Script to generate massive synthetic datasets (10M+ rows) for testing.
+*   **`procesamiento_batch.py`**: Example of batch processing for heavy ETL loads.
+
+### 📁 `sql/`
+*   **`optimizations.sql`**: Examples of advanced SQL tuning (Partitioning, Indexes).
+
+### 📁 `data/`
+*   **`big_sales_data.csv.zip`**: Compressed massive dataset sample.
+
 ## 📁 Included Projects
 
 ### 1. Store Sales Time Series Forecasting (Full Scale)
@@ -31,13 +50,6 @@ This level demonstrates my capability to handle **Big Data** and highly complex 
 *   **Python**: Memory-optimized processing (chunks).
 *   **ML**: `scikit-learn` / `statsmodels` for time series.
 
-**Files**:
-*   `scripts/procesamiento_big_data.py`
-*   `sql/schema_store_sales_extremo.sql`
-*   `notebooks/pipeline_ml_extremo.ipynb`
-
----
-
 ### 2. Brazilian E-commerce Deep Dive
 **Description**: End-to-end analysis of a complex marketplace ecosystem.
 
@@ -49,19 +61,6 @@ This level demonstrates my capability to handle **Big Data** and highly complex 
 **Tech Stack**:
 *   **PostgreSQL**: Full relational model.
 *   **Python**: Advanced ETL.
-
-**Files**:
-*   `sql/schema_olist_extremo.sql`
-*   `notebooks/analisis_extremo_ecommerce.ipynb`
-
----
-
-### 3. YouTube Trending Big Data
-**Description**: Analyzing viral trends across countries.
-
-**Business Context**:
-*   Understanding content engagement at a global scale.
-*   **Value**: Identifying content strategies that drive engagement.
 
 ## 📊 Key Skills Demonstrated
 *   ✅ Working with **Millions of Records** efficiently.
